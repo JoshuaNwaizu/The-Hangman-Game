@@ -1,11 +1,18 @@
-import { BiPhoneCall } from 'react-icons/bi';
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./home/Home";
+import HowToPlay from "./how-to-play/HowToPlay";
+import Category from "./category/Category";
+import InGame from "./in-game/InGame";
 
 const App = () => {
-  return (
-    <div className="flex h-screen w-screen items-center justify-center text-6xl font-bold italic text-black">
-      HANGMAN <BiPhoneCall />
-    </div>
-  );
+  const router = createBrowserRouter([
+    { path: "/", element: <Home /> },
+    { path: "/how-to-play", element: <HowToPlay /> },
+    { path: "/pick-a-category", element: <Category /> },
+    { path: "/game/:category", element: <InGame /> },
+    // { path: "*", element: <ErrorPage /> },
+  ]);
+  return <RouterProvider router={router} />;
 };
 
 export default App;

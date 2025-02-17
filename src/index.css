@@ -1,13 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Mouse Memoirs", serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color: #ffffffde;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  overflow-x: hidden;
+}
+body {
+  min-height: 100svh; /* Ensure the body covers at least the viewport height */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 480px) {
+  body {
+    background-image: url("/images/background-mobile.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.bg-custom-gradient {
+  background: linear-gradient(180deg, #344aba 0%, rgba(0, 20, 121, 0.83) 100%);
+}
+.text-stroke {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #243041;
+}
+.text-gradient {
+  background: linear-gradient(180deg, #67b6ff 16.42%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-custom-gradient-how-to-play {
+  opacity: 0.75;
+  background: linear-gradient(180deg, #1a043a 0%, #151278 70.31%, #2b1677 100%);
 }
