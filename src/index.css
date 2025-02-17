@@ -7,6 +7,9 @@
   color: #fff;
   overflow-x: hidden;
 }
+button {
+  outline: none;
+}
 body {
   min-height: 100svh; /* Ensure the body covers at least the viewport height */
   margin: 0; /* Remove default margin */
@@ -16,6 +19,24 @@ body {
 @media screen and (max-width: 480px) {
   body {
     background-image: url("/images/background-mobile.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (min-width: 720px) {
+  body {
+    background-image: url("/images/background-tablet.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (min-width: 1440px) {
+  body {
+    background-image: url("/images/background-desktop.svg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;

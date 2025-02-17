@@ -10,6 +10,7 @@ const InGame = () => {
       <div className="bg-custom-gradient-how-to-play fixed bottom-0 left-0 right-0 top-0 -z-30"></div>
       <Inputs />
       <KeyPad />
+
       <Modal />
     </div>
   );

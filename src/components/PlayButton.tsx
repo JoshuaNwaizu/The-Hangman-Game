@@ -1,11 +1,23 @@
+import { motion } from "framer-motion";
+
 const PlayButton = () => {
   return (
-    <svg
+    <motion.svg
+      whileTap={{ scale: 0.7 }}
+      animate={{
+        rotate: [0, -90, 0, 90, 0, 0, -90, 0, 90, 0],
+      }}
+      transition={{
+        duration: 0.7,
+        repeat: Infinity,
+        repeatDelay: 6,
+      }}
       xmlns="http://www.w3.org/2000/svg"
       width="160"
       height="160"
       viewBox="0 0 160 160"
       fill="none"
+      className="cursor-pointer outline-none md:h-[12.25rem] md:w-[12.25rem]"
     >
       <g filter="url(#filter0_ii_51_167)">
         <rect
@@ -31,10 +43,7 @@ const PlayButton = () => {
           filterUnits="userSpaceOnUse"
           color-interpolation-filters="sRGB"
         >
-          <feFlood
-            floodOpacity="0"
-            result="BackgroundImageFix"
-          />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -54,12 +63,7 @@ const PlayButton = () => {
             result="effect1_innerShadow_51_167"
           />
           <feOffset dy="-12" />
-          <feComposite
-            in2="hardAlpha"
-            operator="arithmetic"
-            k2="-1"
-            k3="1"
-          />
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.616642 0 0 0 0 0.176458 0 0 0 0 0.9625 0 0 0 1 0"
@@ -82,12 +86,7 @@ const PlayButton = () => {
             result="effect2_innerShadow_51_167"
           />
           <feOffset dy="-4" />
-          <feComposite
-            in2="hardAlpha"
-            operator="arithmetic"
-            k2="-1"
-            k3="1"
-          />
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.141176 0 0 0 0 0.188235 0 0 0 0 0.254902 0 0 0 1 0"
@@ -107,10 +106,7 @@ const PlayButton = () => {
           filterUnits="userSpaceOnUse"
           color-interpolation-filters="sRGB"
         >
-          <feFlood
-            flood-opacity="0"
-            result="BackgroundImageFix"
-          />
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -124,12 +120,7 @@ const PlayButton = () => {
             result="hardAlpha"
           />
           <feOffset dy="-6" />
-          <feComposite
-            in2="hardAlpha"
-            operator="arithmetic"
-            k2="-1"
-            k3="1"
-          />
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.141176 0 0 0 0 0.188235 0 0 0 0 0.254902 0 0 0 1 0"
@@ -149,13 +140,10 @@ const PlayButton = () => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#FE71FE" />
-          <stop
-            offset="1"
-            stop-color="#7199FF"
-          />
+          <stop offset="1" stop-color="#7199FF" />
         </linearGradient>
       </defs>
-    </svg>
+    </motion.svg>
   );
 };
 

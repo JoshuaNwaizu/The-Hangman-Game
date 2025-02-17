@@ -6,6 +6,7 @@ import {
   setGameIndex,
 } from "../../features/gameSlice";
 import { NavigateFunction } from "react-router";
+import { persistor } from "../../store";
 type HandleCloseModal = (
   dispatch: Dispatch<any>,
   navigate: NavigateFunction,
@@ -42,6 +43,7 @@ const handleCloseModal: HandleCloseModal = (
 };
 const handleQuitGame: HandleQuitGame = (dispatch, navigate) => {
   dispatch(resetGame());
+  persistor.purge();
   navigate("/");
 };
 const handleNavigateToPickCategory: HandleNavigateToPickCategory = (

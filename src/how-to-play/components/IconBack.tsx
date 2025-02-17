@@ -6,6 +6,7 @@ const IconBack = () => {
       height="40"
       viewBox="0 0 40 40"
       fill="none"
+      className="md:h-[4rem] md:w-[4rem]"
     >
       <g filter="url(#filter0_i_51_245)">
         <rect

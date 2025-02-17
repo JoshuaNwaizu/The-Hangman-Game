@@ -1,17 +1,21 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface MenuProps {
   onClick?: () => void;
 }
 const Menu: React.FC<MenuProps> = ({ onClick }) => {
   return (
-    <svg
+    <motion.svg
+      whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.115 }}
       onClick={onClick}
       xmlns="http://www.w3.org/2000/svg"
       width="40"
       height="40"
       viewBox="0 0 40 40"
       fill="none"
+      className="cursor-pointer outline-none md:h-[4rem] md:w-[4rem] xl:h-[5.875rem] xl:w-[5.875rem]"
     >
       <g filter="url(#filter0_i_51_605)">
         <rect
@@ -95,7 +99,7 @@ const Menu: React.FC<MenuProps> = ({ onClick }) => {
           <stop offset="1" stop-color="#7199FF" />
         </linearGradient>
       </defs>
-    </svg>
+    </motion.svg>
   );
 };
 
