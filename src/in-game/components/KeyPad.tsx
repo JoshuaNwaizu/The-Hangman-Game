@@ -14,7 +14,7 @@ const alphaBets = Array.from({ length: 26 }, (_, i) =>
 console.log(alphaBets);
 const KeyPad = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { selectedCategory, gameIndex, disableKey } = useSelector(
+  const { selectedCategory, gameIndex, disableKey, showAnswer } = useSelector(
     (state: RootState) => state.game,
   );
 
@@ -45,7 +45,7 @@ const KeyPad = () => {
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.115 }}
             transition={{ type: "spring", stiffness: 200, damping: 8 }}
-            disabled={disableKey.includes(letter)}
+            disabled={disableKey.includes(letter) || showAnswer}
             key={i}
             onClick={() => handleClick(letter)}
             className={`${disableKey.includes(letter) ? "opacity-[0.25]" : null} flex h-[4.125rem] w-[2rem] cursor-pointer items-center justify-center rounded-[0.5rem] bg-[#FFF] text-[1.5rem] uppercase leading-[3rem] tracking-[.13rem] text-[#261676] md:h-[5rem] md:w-[4rem] md:rounded-[1.5rem] md:text-[3rem] md:leading-[3.6rem] md:tracking-[.15rem] xl:w-[6.81rem]`}

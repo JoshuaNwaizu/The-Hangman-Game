@@ -15,16 +15,16 @@ const Header = () => {
 
   useEffect(() => {
     const updateWidth = () => {
-      let widths = `${(lives / 5) * 3.06}rem`;
+      let widths = `${(lives / 8) * 3.06}rem`;
       if (window.innerWidth >= 480) {
-        widths = `${(lives / 5) * 3.06}rem`;
+        widths = `${(lives / 8) * 3.06}rem`;
       }
 
       if (window.innerWidth >= 720) {
-        widths = `${(lives / 5) * 8.56}rem`;
+        widths = `${(lives / 8) * 8.56}rem`;
       }
       if (window.innerWidth >= 1024) {
-        widths = `${(lives / 5) * 13.56}rem`;
+        widths = `${(lives / 8) * 13.56}rem`;
       }
 
       setLifeBarWidth(widths);
@@ -70,7 +70,7 @@ const Header = () => {
           >
             <div
               style={{ width: lifeBarWidth }}
-              className="h-[0.5rem] shrink-0 rounded-[6rem] bg-[#261676] md:h-[0.8rem]"
+              className="h-[0.5rem] shrink-0 rounded-[6rem] bg-[#261676] transition-all duration-200 ease-in md:h-[0.8rem]"
             ></div>
           </motion.div>
           <span>

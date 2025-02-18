@@ -34,7 +34,7 @@ const Home = () => {
             duration: 1,
             type: "spring",
             ease: "backInOut",
-            stiffness: 200, // Increased stiffness for a faster animation
+            stiffness: 200,
             damping: 10,
             delay: 0.5,
           }}

@@ -37,6 +37,7 @@ const handleCloseModal: HandleCloseModal = (
   } else if (lives === 0) {
     dispatch(closeModal());
     dispatch(restartGame());
+    dispatch(setGameIndex({ navigate }));
   } else {
     dispatch(closeModal());
   }

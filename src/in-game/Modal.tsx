@@ -14,20 +14,23 @@ const Modal = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const navigate = useNavigate();
-  const { toggleModal, isGameWon, isGuessedComplete, lives } = useSelector(
-    (state: RootState) => state.game,
-  );
+  const { toggleModal, isGameWon, isGuessedComplete, lives, showAnswer } =
+    useSelector((state: RootState) => state.game);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (toggleModal) {
       if (isGuessedComplete) {
-        // Delay the modal for 2 seconds only if the game is won
         const timer = setTimeout(() => {
           setShowModal(true);
         }, 1500);
 
         return () => clearTimeout(timer);
+      } else if (lives === 0 || showAnswer) {
+        const lostTimer = setTimeout(() => {
+          setShowModal(true);
+        }, 2500);
+        return () => clearTimeout(lostTimer);
       } else {
         setShowModal(true);
       }
