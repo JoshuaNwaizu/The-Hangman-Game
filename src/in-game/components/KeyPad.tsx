@@ -7,22 +7,24 @@ import {
 } from "../../features/gameSlice";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import buttonClick from "/audio/click-sound.mp3";
+import { alphaBets } from "./useableFunctions";
 
-const alphaBets = Array.from({ length: 26 }, (_, i) =>
-  String.fromCharCode(97 + i),
-);
-console.log(alphaBets);
+export const playClick = new Audio(buttonClick);
 const KeyPad = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { selectedCategory, gameIndex, disableKey, showAnswer } = useSelector(
     (state: RootState) => state.game,
   );
+  playClick.volume = 0.5;
 
   useEffect(() => {
     dispatch(setDisableKey([]));
   }, [dispatch, selectedCategory, gameIndex]);
 
   const handleClick = (letter: string) => {
+    playClick.currentTime = 0.33;
+    playClick.play();
     if (disableKey.includes(letter)) return;
 
     dispatch(guessLetter(letter));
@@ -42,7 +44,7 @@ const KeyPad = () => {
       <div className="grid grid-cols-9 gap-2 gap-y-[2rem]">
         {alphaBets.map((letter, i) => (
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.7 }}
             whileHover={{ scale: 1.115 }}
             transition={{ type: "spring", stiffness: 200, damping: 8 }}
             disabled={disableKey.includes(letter) || showAnswer}

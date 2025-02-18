@@ -55,5 +55,14 @@ const handleNavigateToPickCategory: HandleNavigateToPickCategory = (
   navigate("/pick-a-category");
   dispatch(resetGame());
 };
+const alphaBets = Array.from({ length: 26 }, (_, i) =>
+  String.fromCharCode(97 + i),
+);
+console.log(alphaBets);
 
-export { handleCloseModal, handleQuitGame, handleNavigateToPickCategory };
+export {
+  handleCloseModal,
+  handleQuitGame,
+  handleNavigateToPickCategory,
+  alphaBets,
+};
