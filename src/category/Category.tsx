@@ -43,10 +43,6 @@ const Category = () => {
       const filtered = data.categories[category];
       dispatch(setSelectedCategory(filtered));
     }
-    console.log(
-      "this the category for " + category,
-      data?.categories[category],
-    );
   };
   return (
     <div>

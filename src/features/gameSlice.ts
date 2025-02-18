@@ -45,7 +45,6 @@ export const gameSlice = createSlice({
       if (!state.guessLetters.includes(action.payload)) {
         state.guessLetters.push(action.payload);
       }
-      console.log("the guessed letter is:", state.guessLetters);
     },
     decrementLives(state) {
       state.lives = Math.max(state.lives - 1, 0);

@@ -43,10 +43,6 @@ const Modal = () => {
     return null;
   }
 
-  console.log("is game won", isGameWon);
-  console.log("toggleModal", toggleModal);
-  console.log(lives);
-
   return (
     <div className={""}>
       <div className="fixed bottom-0 left-0 right-0 top-0 z-[49] h-screen bg-gradient-to-b from-[#190131] to-[#282B96] opacity-[.7]"></div>

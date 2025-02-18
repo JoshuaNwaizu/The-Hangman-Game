@@ -8,20 +8,13 @@ import { AnimationProps, motion } from "framer-motion";
 const Inputs = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [hasWon, setHasWon] = useState<boolean>(false);
-  const {
-    selectedCategory,
-    guessLetters,
-    isGuessedComplete,
-    gameIndex,
-    showAnswer,
-    lives,
-  } = useSelector((state: RootState) => state.game);
+  const { selectedCategory, guessLetters, gameIndex, showAnswer, lives } =
+    useSelector((state: RootState) => state.game);
   const { data, loading } = useSelector((state: RootState) => state.data);
 
   const [category, setCategory] = useState(
     selectedCategory[gameIndex]?.name.toLocaleLowerCase().split(" "),
   );
-  console.log("check for category", category);
 
   useEffect(() => {
     dispatch(fetchData());
@@ -57,8 +50,6 @@ const Inputs = () => {
       dispatch(isGuessed(true));
       setHasWon(true);
     }
-
-    console.log("isguess true", isGuessedComplete);
   }, [guessLetters, dispatch, hasWon]);
 
   if (loading) {
@@ -68,8 +59,6 @@ const Inputs = () => {
     return <p>No data available</p>;
   }
 
-  console.log(guessLetters);
-  console.log("game index", gameIndex);
   const shakeAnimation: AnimationProps["animate"] = {
     x: [0, -20, 20, -20, 20, 0],
     transition: {

@@ -18,7 +18,6 @@ export const fetchData = createAsyncThunk("data/fetchData", async () => {
     const response = await fetch("/data.json");
     if (!response.ok) throw new Error("failed to fetch data");
     const data: DataType = await response.json();
-    console.log("Fetched data:", data);
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
